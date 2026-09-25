@@ -1,0 +1,62 @@
+generated: '2026-09-25'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 4
+  own: 0
+  other_domain: 3
+  platform: 1
+  roles:
+  - api
+  - data
+  - other
+  - website
+hosts:
+- host: api.aidkr.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: aidkr.com
+  role: api
+  relation: other-domain
+- host: data.aidkr.com
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  title: Dash
+  status: 200
+  registrable_domain: aidkr.com
+  role: data
+  relation: other-domain
+- host: equityzen.com
+  found_by:
+  - pointer
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: akamai
+  registrable_domain: equityzen.com
+  role: website
+  relation: platform
+- host: www.aidkr.com
+  found_by:
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  types: []
+  serves:
+  - api
+  - docs
+  registrable_domain: aidkr.com
+  role: other
+  relation: other-domain
